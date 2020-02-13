@@ -39,5 +39,9 @@ public class Query implements GraphQLQueryResolver {
         return tutorialRepository.count();
     }
 
+    public Iterable<Tutorial> findByTitle(String title){
+        return tutorialRepository.findByTitleContainingIgnoreCase(title);
+    }
+
     public Iterable<Blueprint> getAllBlueprints() { return blueprintRepository.findAll(); }
 }

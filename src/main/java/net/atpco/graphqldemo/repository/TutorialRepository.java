@@ -6,4 +6,5 @@ import net.atpco.graphqldemo.model.Tutorial;
 
 public interface TutorialRepository extends JpaRepository<Tutorial, Long> {
 
+    Iterable<Tutorial> findByTitleContainingIgnoreCase(String title);
 }
